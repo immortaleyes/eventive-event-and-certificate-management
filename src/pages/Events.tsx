@@ -18,7 +18,7 @@ const Events = () => {
           </div>
           <div className="flex flex-wrap gap-2">
             <Button asChild variant="default" className="group">
-              <Link to="/event/featured-symposium">
+              <Link to="/">
                 Featured Event
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>

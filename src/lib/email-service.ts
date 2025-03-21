@@ -9,7 +9,7 @@ interface EmailData {
 }
 
 export const sendRegistrationEmail = async (data: EmailData): Promise<boolean> => {
-  console.log('Sending email to:', data.to);
+  console.log('Sending registration confirmation email to:', data.to);
   
   // This is a mock implementation
   // In a real app, you would integrate with an email service API
