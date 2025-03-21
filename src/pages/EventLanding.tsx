@@ -15,9 +15,9 @@ const EventLanding = () => {
   const { id } = useParams();
   const { toast } = useToast();
   
-  // Mock event data - in a real app, this would come from an API/database
+  // Featured event data - in a real app, this would come from an API/database
   const event = {
-    id: id || "special-event",
+    id: id || "featured-symposium",
     title: "Sharda University Annual Technical Symposium 2023",
     date: "November 15, 2023",
     time: "10:00 AM - 4:00 PM",

@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Form,
   FormControl,
@@ -23,7 +22,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { sendRegistrationEmail } from "@/lib/email-service";
-import { saveParticipant } from "@/lib/participant-service";
+import { saveParticipant, type Participant } from "@/lib/participant-service";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -63,15 +62,23 @@ export const RegistrationForm = ({ eventId, onSuccess }: RegistrationFormProps) 
       const registrationId = `REG-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
       
       // Save participant data to database
-      await saveParticipant({
+      // Ensure all required fields from Participant type are included
+      const participantData: Participant = {
         id: registrationId,
         eventId,
-        ...data,
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        institution: data.institution,
+        role: data.role,
+        requirements: data.requirements || "",
         registrationDate: new Date().toISOString(),
         status: "registered",
         attended: false,
         certificateIssued: false,
-      });
+      };
+      
+      await saveParticipant(participantData);
       
       // Send confirmation email
       await sendRegistrationEmail({
