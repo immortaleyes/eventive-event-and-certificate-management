@@ -12,6 +12,7 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Certificates from "./pages/Certificates";
 import Admin from "./pages/Admin";
+import EventLanding from "./pages/EventLanding";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/event/:id" element={<EventLanding />} />
           <Route path="/create-event" element={<CreateEvent />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
