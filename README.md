@@ -116,7 +116,7 @@ For automated publishing, consider setting up a CI/CD pipeline.
 
 **Ajay Shriram Kushwaha**  
 📫 [kushwaha.ajay22@gmail.com](mailto:kushwaha.ajay22@gmail.com)  
-🌍 [GitHub Profile](https://github.com/ajaykushwaha1)  
+🌍 [GitHub Profile](https://github.com/immortaleyes))  
 📝 Passionate about clean code, web development, and solving real-world problems with technology.
 
 ---
